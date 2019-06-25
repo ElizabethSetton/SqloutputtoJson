@@ -1,0 +1,161 @@
+*, *::after, *::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 76.5%;
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 1.7rem;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	line-height: 1.7;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4vh 92vh 4vh;
+}
+
+.navbar {
+	background-color: #343a40;
+	padding: 0.5rem;
+	color: white;
+}
+
+.nav {
+	grid-column: 1 / -1;
+	grid-row: 1 / 2;	
+	display: flex;
+}
+
+.nav__heading {
+	align-self: center;
+}
+.container {
+	display: grid;
+	grid-template-columns: 3vw 43vw 8vw 43vw 3vw; 
+}
+
+.sql {
+	grid-column: 2 / 3;
+	display: grid; 
+	grid-template-rows: 4rem 1fr 4rem;
+}
+
+.heading__secondary {
+	padding: 0.5rem;
+}
+
+.buttons {
+	grid-column: 3 / 4;
+
+	display: flex;
+	flex-flow: column;
+	transition: all .4s;
+}
+
+.btn {
+	height: 4rem; 
+	width: 4rem;
+	margin: 0.8rem auto;
+	color: white;
+	background-color: #343a40;
+	border: none;
+	font-size: 1.7rem;
+	border-radius: 10%;
+	box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.14); 
+}
+
+.btn:first-child {
+	margin-top: 4rem;
+}
+
+.btn:hover {
+	transform: translateY(-0.5rem) scale(1.2);
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.json {
+	grid-column: 4 / 5;
+	display: grid;
+	grid-template-rows: 4rem 1fr 4rem;
+}
+
+.notepad {
+	box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.14); 
+	padding: 2rem;
+	border: 1px solid #343a40;
+	resize: none;
+}
+
+.notepad:focus {
+	outline: none;
+}
+
+.footer {
+	grid-column: 1 / -1;
+	grid-row: 3 / 4;
+	text-align: center;
+	font-size: 1.4rem;
+
+}
+
+.link:link {
+	color: white;
+	text-decoration: none;
+	font-size: 1.6rem;
+		
+}
+
+.link:hover {
+	box-shadow: 0px 20px 18px 10px rgba(0, 0, 0, 0.14); 
+}
+
+@media only screen and (max-width: 900px) {
+	.container {
+		grid-template-columns: 3vw 94vw 3vw;
+		grid-template-rows: 2vh 39vh 10vh 39vh 2vh; 
+	}
+
+	.sql {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3
+	}
+	.sql, .json {
+		grid-template-rows: 4rem 1fr;
+	}
+
+	.buttons {
+		grid-row: 3 / 4;
+		grid-column: 2 / 3;
+		flex-flow: row;
+		margin: auto 0;
+		justify-content: space-around;
+	}
+	.btn {
+		margin: 0;
+	}
+
+	.btn:first-child {
+		margin-top: 0;
+	}
+	.buttons .btn:first-child, .buttons .btn:first-child + .btn {
+		transform: rotate(90deg);
+	}
+	.btn:hover, .btn:hover {
+		transform: none;
+	}
+	.json {
+		grid-row: 4 / 5;
+		grid-column: 2 / 3;
+	}
+
+}
